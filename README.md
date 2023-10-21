@@ -110,7 +110,8 @@ This is a ROS package for instance object detection, which simply utilizes the t
     You will see visualization of both original input and detector output.
 
     Here is a demo video
-    <video width="800" height="300" autoplay loop muted>
-        <source src="demo/demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    
+
+https://github.com/Jaraxxus-Me/voxdet_ros/assets/56875617/7a2afa18-49a3-4f1a-b21e-fc490eee9ac2
+
+
