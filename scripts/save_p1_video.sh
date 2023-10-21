@@ -1,0 +1,1 @@
+rosrun image_view video_recorder image:=/camera/color/image_raw _filename:=/storage/airlab/real_data/P1/1123.avi _fps:=30
