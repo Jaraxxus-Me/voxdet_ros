@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>zid3d_ros</name>
+  <name>voxdet_ros</name>
   <version>0.0.0</version>
-  <description>The zid3d_ros package</description>
+  <description>The voxdet_ros package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

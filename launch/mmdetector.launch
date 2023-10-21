@@ -6,16 +6,13 @@
 	<arg name="is_service" default="false" />
 	<arg name="visualization" default="true" />
 	<!-- Start detector node -->
-	<node pkg= "zid3d_ros" name="mmdetector" type="mmdetector.py"  output="screen"> 
+	<node pkg= "voxdet_ros" name="mmdetector" type="mmdetector.py"  output="screen"> 
     	<remap from="~image" to="$(arg image_topic)"/>
 		<param name="~p1_path" value="$(arg p1_path)"/>
 		<param name="~publish_rate" value="$(arg mmdet_pub_rate)" />
 		<param name="~is_service" value="$(arg is_service)" />
 		<param name="~visualization" value="$(arg visualization)" />
 	</node>
-	<!-- Start rviz -->
-	<!-- <node type="rviz" name="rviz" pkg="rviz" args="/ws/ROS/src/zid3d_ros/rviz/test_camera.rviz" /> -->
-	<!-- Start result publish node -->
 	<node pkg="image_view" type="image_view" name="image_view">
 		<remap from="image" to="/mmdetector/debug_image"/>
 	</node>

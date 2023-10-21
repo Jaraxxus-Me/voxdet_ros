@@ -1,10 +1,4 @@
 #!/usr/bin/env python
-"""
- @Author: Jianfeng Cui 
- @Date: 2021-05-22 11:36:30 
- @Last Modified by:   Jianfeng Cui 
- @Last Modified time: 2021-05-22 11:36:30 
-"""
 
 # Check Pytorch installation
 from logging import debug
@@ -50,10 +44,10 @@ import threading
 
 # Choose to use a config and initialize the detector
 CONFIG_NAME = 'VoxDet_test.py'
-CONFIG_PATH = os.path.join('/ws/ROS/src/zid3d_ros/VoxDet/configs/voxdet', CONFIG_NAME)
+CONFIG_PATH = os.path.join('/ws/ROS/src/voxdet_ros/VoxDet/configs/voxdet', CONFIG_NAME)
 
 # Setup a checkpoint file to load
-MODEL_PATH = os.path.join('/ws/ROS/src/zid3d_ros/VoxDet/outputs/VoxDet_p2/iter_16876.pth')
+MODEL_PATH = os.path.join('/ws/ROS/src/voxdet_ros/VoxDet/outputs/VoxDet_p2/iter_16876.pth')
 
 import sys
 import tty

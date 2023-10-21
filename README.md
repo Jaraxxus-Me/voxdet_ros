@@ -48,23 +48,18 @@ This is a ROS package for instance object detection, which simply utilizes the t
 
 ### Prepare phase1 support information
 
-1. Generate mask from video
-
-   In `[ROS workspace]/src/zid3d_ros/PoolNet`, open `create_bop.py`, change the video, image path, then run:
-
-   ```shell
-   python create_bop.py
-   ```
-
-   You'll get RGB and masks in your specified folder
-
-2. Compress all the information into info.npz
-
-   ```shell
-   cd src/zid3d_ros/Zid3D
-   python tools/pre_save_p1_demo.py # remember to configure the p1 support path and instance id
-   ```
-
+1. You need to generate the mask and rotations for the phase 1 references the desired path look like:
+    ```
+    src/voxdet_ros
+        VoxDet/
+            data/
+                [Your Data Folder]/
+                    test_video (similar to the lmo and ycbv)
+    ```
+2. Use our tool to get and `.npz` file for each instance
+    ```
+    python3 src/voxdet_ros/VoxDet/tools/pre_save_p1_bop.py #change the path and object id accordingly
+    ```
    
 
 ### ROS Interfaces
@@ -94,14 +89,14 @@ This is a ROS package for instance object detection, which simply utilizes the t
 
 - In terminal 1, start rviz
     ```shell
-    rviz # load the rviz file in src/zid3d_ros/rviz/test_image.rviz
+    rviz # load the rviz file in src/voxdet_ros/rviz/test_image.rviz
     ```
 
 - In terminal 2, start realsense camera
 
     ```shell
     cd src
-    bash zid3d_ros/scripts/start_camera.sh
+    bash voxdet_ros/scripts/start_camera.sh
     ```
 
 - In terminal 3, start detector node
@@ -109,7 +104,13 @@ This is a ROS package for instance object detection, which simply utilizes the t
     First specify the config file and model checkpoint in mmdetector.py
 
     ```shell
-    roslaunch zid3d_ros mmdetector.launch
+    roslaunch voxdet_ros mmdetector.launch
     ```
 
     You will see visualization of both original input and detector output.
+
+    Here is a demo video
+    <video width="800" height="300" autoplay loop muted>
+        <source src="demo/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
