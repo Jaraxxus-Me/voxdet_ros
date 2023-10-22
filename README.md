@@ -114,4 +114,16 @@ This is a ROS package for instance object detection, which simply utilizes the t
 
 https://github.com/Jaraxxus-Me/voxdet_ros/assets/56875617/7a2afa18-49a3-4f1a-b21e-fc490eee9ac2
 
+## Reference
+If our work inspires your research, please cite us as:
 
+```
+@INPROCEEDINGS{Li2023vox,       
+	author={Li, Bowen and Wang, Jiashun and Hu, Yaoyu and Wang, Chen and Scherer, Sebastian},   
+	booktitle={Proceedings of the Advances in Neural Information Processing Systems (NeurIPS)}, 
+	title={{VoxDet: Voxel Learning for Novel Instance Detection}},
+	year={2023},
+	volume={},
+	number={}
+}
+```
