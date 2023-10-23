@@ -5,7 +5,7 @@ This is a ROS package for instance object detection, which simply utilizes the t
 
 - ROS Noetic
 - Python 3.8+, PyTorch 1.2+, CUDA 11.3+ and [MMCV](https://mmcv.readthedocs.io/en/latest/#installation)
-- [Docker image](bowenli1024/voxdet:ros-v1)
+- [Docker image]([bowenli1024/voxdet:ros-v1](https://hub.docker.com/layers/bowenli1024/voxdet/ros-v1/images/sha256-77b1d0d6f33a05b4e8ab64893ca328d6df3fd8f34803caa2403ff4b3f3ffe89a?context=repo))
 
 
 
