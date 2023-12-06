@@ -1,27 +1,35 @@
 # VoxDet-ros
-This is a ROS package for instance object detection, which simply utilizes the toolbox [MMDetection](https://github.com/open-mmlab/mmdetection) of [OpenMMLab](https://openmmlab.com/).
+This is a ROS package for VoxDet, which simply utilizes the toolbox [MMDetection](https://github.com/open-mmlab/mmdetection) of [OpenMMLab](https://openmmlab.com/).
+You can deploy VoxDet on real-robots using this library!
 
 ### Requirements
-
+#### Build your own env (Not recommended)
 - ROS Noetic
 - Python 3.8+, PyTorch 1.2+, CUDA 11.3+ and [MMCV](https://mmcv.readthedocs.io/en/latest/#installation)
+#### Use our docker (Strongly recommended, it is super easy)
 - [Docker image]([bowenli1024/voxdet:ros-v1](https://hub.docker.com/layers/bowenli1024/voxdet/ros-v1/images/sha256-77b1d0d6f33a05b4e8ab64893ca328d6df3fd8f34803caa2403ff4b3f3ffe89a?context=repo))
+	```
+	docker pull bowenli1024/voxdet:ros-v1
+	```
 
 
 
 ### Installation
 
-1. Clone all needed packages: this package, detector libraries, vision_msgs, and realsense-ros
+1. Clone all needed packages: this package, VoxDet libraries, [Bop_toolkit](https://mega.nz/file/BAEj3TgS#yzwX2AHUg9CtCsmDV17rxVkmFhw4mh34y6gvQ3FDS4E), vision_msgs, and realsense-ros
     ```shell
     cd {ROS WORKSPACE}/src
     # this package and vision_msgs
     git clone git@github.com:Jaraxxus-Me/voxdet_ros.git
     git clone https://github.com/ros-perception/vision_msgs.git
     cd voxdet_ros
-	# VoxDet library    
+    # VoxDet library    
     git clone https://github.com/Jaraxxus-Me/VoxDet.git
     cd VoxDet
     pip install -e -v .
+    # Modified BOP_tookit, use the link above
+    cd bop_toolkit
+    pip install -e .
     # realsense-ros
     git clone https://github.com/IntelRealSense/realsense-ros.git
     cd realsense-ros/
@@ -56,7 +64,9 @@ This is a ROS package for instance object detection, which simply utilizes the t
                 [Your Data Folder]/
                     test_video (similar to the lmo and ycbv)
     ```
-2. Use our tool to get and `.npz` file for each instance
+    Then, modify the `~p1_path` in the `mmdetector.launch` file.
+   
+3. Use our tool to get and `.npz` file for each instance
     ```
     python3 src/voxdet_ros/VoxDet/tools/pre_save_p1_bop.py #change the path and object id accordingly
     ```
