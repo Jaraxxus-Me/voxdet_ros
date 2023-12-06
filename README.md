@@ -61,9 +61,12 @@ You can deploy VoxDet on real-robots using this library!
     src/voxdet_ros
         VoxDet/
             data/
-                [Your Data Folder]/
+                1/
                     test_video (similar to the lmo and ycbv)
+		2/
+    ...
     ```
+    Note that the instance id "1", "2", can be used to switch target instance in the following demos.
     Then, modify the `~p1_path` in the `mmdetector.launch` file.
    
 3. Use our tool to get and `.npz` file for each instance
@@ -118,7 +121,7 @@ You can deploy VoxDet on real-robots using this library!
     ```
 
     You will see visualization of both original input and detector output.
-
+    You can also press your key board "1", "2" to switch among different instances in the data_path, have fun!
     Here is a demo video
     
 
